@@ -15,30 +15,66 @@
             color: #ffffff;
             font-family: 'Arial', sans-serif;
             text-align: center;
+            padding: 20px; /* Espaço ao redor do conteúdo */
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column; /* Alinha os filhos verticalmente */
+            align-items: center; /* Centraliza os itens horizontalmente */
         }
         h1 {
-            font-size: 3rem; /* Aumentar o tamanho da fonte do título */
-            margin-bottom: 30px; /* Espaço entre o título e a caixa da contagem */
+            font-size: 3rem;
+            margin-bottom: 30px;
         }
         .timer {
             background-color: #3b3f45;
-            padding: 40px; /* Aumentar o padding da caixa */
+            padding: 40px;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            font-size: 2.5rem; /* Tamanho da fonte do timer */
+            font-size: 2.5rem;
+            width: 100%;
+            max-width: 600px; /* Largura máxima da caixa */
         }
         .time-segment {
             display: inline-block;
-            margin: 0 20px; /* Espaçamento maior entre os segmentos */
+            margin: 0 20px;
         }
         .label {
-            font-size: 0.6em; /* Aumentar um pouco o tamanho das labels */
+            font-size: 0.6em;
             color: #bbb;
+        }
+
+        /* Consultas de mídia para dispositivos menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .timer {
+                padding: 30px;
+                font-size: 2rem;
+            }
+            .time-segment {
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .timer {
+                padding: 20px;
+                font-size: 1.5rem;
+            }
+            .label {
+                font-size: 0.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <div>
+    <div class="container"> <!-- Adicionado container para flexbox -->
         <h1>Quantidade de dias para receber o carro</h1>
         <div class="timer">
             <div id="countdown">
